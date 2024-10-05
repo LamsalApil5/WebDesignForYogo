@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Retreat Pokhara</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script async defer src="https://cdn.jsdelivr.net/gh/somanchiu/Keyless-Google-Maps-API@v6.8/mapsJavaScriptAPI.js"></script>
+  <style>
+      /* Add a fixed height for the map */
+      #map {
+          height: 400px;
+          width: 100%;
+      }
+  </style>
+</head>
+<body class="bg-white-100 font-sans">
+  <nav class="bg-white shadow-md">
+    <div class="container mx-auto px-2 py-2 flex justify-between items-center">
+        <h1 class="mx-20">
+            <img src="logo.png" width="200px" alt="Yoga Logo"/>
+        </h1>
+        <div class="md:hidden">
+            <button id="menuToggle" class="text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <ul class="hidden md:flex space-x-6 mr-20" id="navbar">
+            <li><a href="./index.html" class="text-green-800 font-medium hover:text-green-500 text-lg">Home</a></li>
+            <li><a href="#" class="text-green-800 font-medium hover:text-green-500 text-lg">Venues</a></li>
+            <li><a href="#" class="text-green-800 font-medium hover:text-green-500 text-lg">About Us</a></li>
+            <li><a href="./Contact.html" class="text-green-800 font-medium hover:text-green-500 text-lg">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<div class="md:hidden">
+    <ul class="bg-white shadow-md hidden" id="mobileMenu">
+        <li><a href="./index.html" class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">Home</a></li>
+        <li><a href="#" class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">Venues</a></li>
+        <li><a href="#" class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">About Us</a></li>
+        <li><a href="./Contact.html" class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">Contact</a></li>
+    </ul>
+</div>
+
+<div class="container mx-auto px-4 py-8 flex flex-col md:flex-row h-[600px]">
+    <!-- Contact Form -->
+    <div class="w-full md:w-1/2 p-4 mb-6 md:mb-0">
+        <h2 class="text-2xl font-bold mb-6 text-center">Contact Us</h2>
+        <form action="#" method="POST" class="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                <input type="email" id="email" name="email" required placeholder="your-email@example.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+            </div>
+            <div class="mb-6">
+                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                <textarea id="message" name="message" required placeholder="Your message here..." rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Google Map -->
+    <div class="w-full md:w-1/2">
+        <h2 class="text-2xl font-bold mb-6 text-center">Find Us Here</h2>
+        <div id="map" class="h-64 md:h-auto"></div> <!-- Set height for mobile -->
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer style="background-color: #545454; color: #D1D5DB; padding: 1.5rem 0;">
+    <div class="container mx-auto px-4 text-center">
+        <p>
+            &copy; 2024 Yoga Retreat Pokhara. All rights reserved. 
+            <a href="/privacy" style="color: #D1D5DB; text-decoration: none; transition: color 0.3s;">Privacy Policy</a> | 
+            <a href="/terms" style="color: #D1D5DB; text-decoration: none; transition: color 0.3s;">Terms of Service</a>
+        </p>
+        <div class="flex justify-center mt-4">
+            <a href="https://facebook.com" style="color: #D1D5DB; margin-right: 1rem;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" style="color: #D1D5DB; margin-right: 1rem;">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://instagram.com" style="color: #D1D5DB;">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Initialize and add the map
+    function initMap() {
+        // Your location coordinates
+        const location = { lat: 28.2250899, lng: 83.9584195 }; // Change this to your desired coordinates
+        // The map, centered at your location
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: location,
+        });
+        // The marker, positioned at your location
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map,
+        });
+    }
+
+    // Load the map
+    window.initMap = initMap;
+
+    // Mobile Navigation Toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+</body>
+</html>
