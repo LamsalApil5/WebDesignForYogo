@@ -1,0 +1,19 @@
+     /* Calendar z-index */
+            
+     #date-picker {
+        position: relative;
+        z-index: 5000; /* Ensures it appears on top */
+    }
+
+    /* Make sure the sticky element behaves well */
+    .sticky {
+        position: sticky;
+        top: 0; /* Stick to top of the viewport */
+        z-index: 10000; /* Higher value to ensure it stays above content */
+        background-color: white;
+    }
+
+    /* To ensure other dropdowns or overlays work well */
+    .overlay-frosted {
+        z-index: 1000; /* Lower than the calendar but higher than regular content */
+    }
