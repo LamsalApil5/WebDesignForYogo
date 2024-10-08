@@ -14,34 +14,16 @@
 
         <!-- Include Flatpickr JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <style>
-            /* Calendar z-index */
-            
-        #date-picker {
-            position: relative;
-            z-index: 5000; /* Ensures it appears on top */
-        }
-
-        /* Make sure the sticky element behaves well */
-        .sticky {
-            position: sticky;
-            top: 0; /* Stick to top of the viewport */
-            z-index: 10000; /* Higher value to ensure it stays above content */
-            background-color: white;
-        }
-
-        /* To ensure other dropdowns or overlays work well */
-        .overlay-frosted {
-            z-index: 1000; /* Lower than the calendar but higher than regular content */
-        }
-
-    </style>
+        <link href="./style.css">
+        <script src="./script.js"></script>
     </head>
 
     <body class="font-sans ">
-        <header class="mx-5 md:mx-40">
+        <header
+            class="dark:bg-gray-800 mb-4 shadow-xl shadow-gray-100 dark:shadow-gray-800">
             <!-- Navigation Bar -->
-            <nav class="bg-white">
+
+            <nav class="bg-white mx-5 md:mx-40 ">
                 <div
                     class="container mx-auto px-4 py-4 flex justify-between items-center">
                     <h1>
@@ -62,553 +44,672 @@
                         </button>
                     </div>
                     <ul class="hidden md:flex space-x-6" id="navbar">
-                        <li><a href="./index.html"
-                                class="text-green-800 font-medium hover:text-green-500 text-lg">Home</a></li>
                         <li><a href="#"
-                                class="text-green-800 font-medium hover:text-green-500 text-lg">About
-                                Us</a></li>
+                                class="text-green-800 font-medium hover:text-green-500 text-lg">About</a></li>
                         <li><a href="#"
-                                class="text-green-800 font-medium hover:text-green-500 text-lg">Help</a></li>
+                                class="text-green-800 font-medium hover:text-green-500 text-lg">FAQs</a></li>
+                        <li><a href="#"
+                                class="text-green-800 font-medium hover:text-green-500 text-lg">Blogs</a></li>
+                        <li><a href="#"
+                                class="text-green-800 font-medium hover:text-green-500 text-lg">USD
+                                <i class="fa fa-usd"></i></a></li>
                     </ul>
                 </div>
-            </nav>
 
+            </nav>
             <!-- Mobile Navigation -->
             <div class="md:hidden">
                 <ul class="bg-white shadow-md hidden" id="mobileMenu">
-                    <li><a href="./index.html"
-                            class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">Home</a></li>
+                    <li><a href="#l"
+                            class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">About</a></li>
 
                     <li><a href="#"
-                            class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">About
-                            Us</a></li>
+                            class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">FAQs</a></li>
                     <li><a href="#"
-                            class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">Help</a></li>
-
+                            class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">Blogs</a></li>
+                    <li><a href="#"
+                            class="block px-4 py-2 font-medium text-green-800 hover:text-green-500">USD
+                            <i class="fa fa-usd"></i></a></li>
                 </ul>
             </div>
         </header>
         <section class="mx-5 md:mx-40">
             <!-- Main Section -->
-            <!-- Main Section -->
-            <div
-                class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 px-4 lg:px-0">
+            <div class="container mx-auto px-4 lg:px-0">
                 <!-- Text Section -->
                 <div
-                    class="col-span-2 flex flex-col justify-center items-center sm:mr-4">
-                    <h1
-                        class="text-center text-2xl sm:text-4xl font-extrabold sm:font-black leading-tight">
-                        Discover the best handpicked retreats and trainings on
-                        the
-                        planet
-                    </h1>
-                    <p class="text-center text-lg sm:text-xl mt-2 max-w-lg">
-                        Unplug. De-stress. Recharge.
-                    </p>
-                </div>
-
-                <!-- Image Section 1 -->
-                <div class="block col-span-1">
-                    <div class="relative h-full rounded-xl overflow-hidden">
-                        <img alt fetchpriority="auto" loading="lazy"
-                            decoding="async" data-nimg="fill"
-                            class="h-full w-full object-cover object-center relative"
-                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                            sizes="(min-width: 1200px) 1200px, (min-width: 640px) 640px, 420px"
-                            srcset="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg 80w, https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg 420w, https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg 640w, https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg 1200w"
-                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
+                    class="container grid grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+                    <div
+                        class="col-span-2 flex flex-col justify-center items-center sm:mr-4 px-4 lg:px-0">
+                        <h1
+                            class="text-center text-4xl sm:text-5xl leading-normal sm:leading-snug font-extrabold sm:font-black">Discover
+                            the best handpicked retreats and trainings on the
+                            planet</h1>
+                        <div
+                            class="text-center text-xl sm:text-2xl sm:leading-10 max-w-112">Unplug.
+                            De-stress. Recharge.</div>
                     </div>
-                </div>
-
-                <!-- Image Section 2 and 3 -->
-                <div
-                    class="col-span-1 lg:col-span-2 grid grid-cols-5 grid-rows-12 gap-2 lg:gap-4 h-112">
-                    <!-- Small Image 1 -->
-                    <div
-                        class="hidden sm:block invisible order-last lg:order-none col-span-5 sm:col-span-3 row-span-1 lg:mt-4 relative rounded-xl overflow-hidden">
-                        <img alt fetchpriority="auto" loading="lazy"
-                            decoding="async" data-nimg="fill"
-                            class="h-full w-full relative object-cover object-bottom"
-                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
-                    </div>
-
-                    <!-- Large Image -->
-                    <div
-                        class="col-span-5 sm:col-span-4 row-span-6 sm:row-span-5 lg:row-span-6 relative rounded-xl overflow-hidden">
-                        <img alt fetchpriority="auto" loading="lazy"
-                            decoding="async" data-nimg="fill"
-                            class="h-full w-full relative object-cover object-center"
-                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
-                    </div>
-
-                    <!-- Small Image 2 -->
-                    <div
-                        class="order-first lg:order-none col-span-5 lg:col-span-3 row-span-6 lg:row-span-5 relative rounded-xl overflow-hidden">
-                        <img alt fetchpriority="auto" loading="lazy"
-                            decoding="async" data-nimg="fill"
-                            class="h-full w-full relative object-cover object-center"
-                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
-                    </div>
-
-                    <!-- Small Image 3 -->
-                    <div
-                        class="col-span-2 row-span-6 lg:row-span-5 mb-4 hidden lg:block relative rounded-xl overflow-hidden">
-                        <img alt fetchpriority="auto" loading="lazy"
-                            decoding="async" data-nimg="fill"
-                            class="h-full w-full relative object-cover object-center"
-                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Search Section -->
-            <div class="hidden sm:block">
-                <div
-                    class="relative flex justify-center container mt-6 lg:mt-16 mb-6 sticky top-0 z-[1000] bg-white dark:bg-gray-800">
-                    <div
-                        class="absolute inset-0 overlay-frosted z-10 opacity-0 transition-opacity duration-300"></div>
-
-                    <!-- Main Search Bar -->
-                    <div
-                        class="flex space-x-3 w-full lg:w-4/5 lg:p-4 bg-white dark:bg-gray-800 p-2 z-30 rounded-full shadow-2xl hover:shadow-blue-300 hover:shadow-3xl shadow-gray-300 dark:shadow-blue-600 transition-transform duration-200">
-
-                        <!-- Location Input -->
-                        <div class="grid grid-cols-9 gap-4 w-full">
-                            <div class="col-span-5 flex items-center">
-                                <div class="relative w-full">
-                                    <div
-                                        class="flex items-center w-full p-2 rounded-full cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        <span class="text-gray-400">
-                                            <!-- Location Icon -->
-                                            <svg class="w-6 h-6" fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="2"
-                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            </svg>
-                                        </span>
-                                        <div class="ml-2 w-full">
-                                            <label
-                                                class="text-gray-600 dark:text-gray-300 font-semibold">Location</label>
-                                            <input type="text"
-                                                class="w-full bg-transparent text-lg text-gray-700 dark:text-gray-200 font-medium focus:outline-none"
-                                                placeholder="Where are you going?" />
+                    <div class="block sm:hidden col-span-2 px-2 lg:px-0">
+                        <div
+                            class="relative flex justify-center mt-6 mb-6 z-40">
+                            <div class="absolute -mt-2"></div>
+                            <div
+                                class="fixed top-2 px-4 inset-x-8 p-2 bg-white dark:bg-gray-800 rounded-xl shadow-2xl hover:shadow-blue-300 hover:shadow-3xl shadow-gray-300 dark:shadow-blue-600 transition-all duration-200">
+                                <div class="flex justify-between">
+                                    <div class="flex-grow">
+                                        <div
+                                            class="group flex w-full p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer">
+                                            <span
+                                                class="mr-1 text-gray-400 dark:text-gray-500">
+                                                <svg width="1.5rem" fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <g>
+                                                        <path
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                        <path
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                            <div class="w-full">
+                                                <div
+                                                    class="text-base font-medium">Location</div>
+                                                <div
+                                                    class="w-full p-0 text-base font-regular text-gray-500 dark:text-gray-300 focus:outline-none cursor-pointer disabled:cursor-not-allowed focus:shadow-none hover:shadow-none line-clamp-1 data-hj-whitelist">Where
+                                                    are you going?</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Dates Input -->
-                            <div class="col-span-4 flex items-center">
-                                <div class="relative w-full">
                                     <div
-                                        class="flex items-center w-full p-2 rounded-full cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
-                                        <span class="text-gray-400">
-                                            <!-- Date Icon -->
-                                            <svg class="w-6 h-6" fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24">
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="1.5"
-                                                    d="M3.09264 9.40427H20.9166"></path>
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="1.5"
-                                                    d="M16.4421 13.3097H16.4513"></path>
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="1.5"
-                                                    d="M12.0046 13.3097H12.0139"></path>
-                                                <path stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    stroke-width="1.5"
-                                                    d="M7.55789 13.3097H7.56715"></path>
+                                        class="flex items-center justify-center w-12 px-0 rounded-xl">
+                                        <span
+                                            class="w-8 text-gray-400 dark:text-gray-300">
+                                            <svg width="1.5rem"
+                                                viewBox="0 0 20 20"
+                                                fill="currentColor">
                                                 <path fill-rule="evenodd"
                                                     clip-rule="evenodd"
-                                                    d="M16.2383 3.57919H7.77096C4.83427 3.57919 3 5.21513 3 8.22222V17.2719C3 20.3262 4.83427 22 7.77096 22H16.229C19.175 22 21 20.3546 21 17.3475V8.22222C21.0092 5.21513 19.1842 3.57919 16.2383 3.57919Z"
-                                                    stroke-width="1.5"></path>
+                                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"></path>
                                             </svg>
                                         </span>
-                                        <div class="ml-2 w-full">
-                                            <label
-                                                class="text-gray-600 dark:text-gray-300 font-semibold">Dates</label>
-                                            <input type="text" id="date-picker"
-                                                class="w-full bg-transparent text-lg text-gray-700 dark:text-gray-200 font-medium focus:outline-none"
-                                                placeholder="Select your dates" />
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Search Button -->
-                        <button
-                            class="flex items-center justify-center w-20 h-12 bg-gradient-to-br from-blue-300 to-blue-500 hover:to-blue-600 dark:from-blue-500 dark:to-blue-700 rounded-full text-white ml-4">
-                            <svg class="w-6 h-6" fill="currentColor"
-                                viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.817-4.817A6 6 0 012 8z"></path>
-                            </svg>
-                        </button>
+                    </div>
+                    <div class="block col-span-1">
+                        <div class="relative h-full rounded-xl overflow-hidden">
+                            <img alt fetchpriority="auto" loading="lazy"
+                                decoding="async" data-nimg="fill"
+                                class="h-full w-full object-cover object-center relative"
+                                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                sizes="(min-width: 1200px) 1200px, (min-width: 640px) 640px, 420px"
+                                src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
+                        </div>
+                    </div>
+                    <div
+                        class="col-span-1 lg:col-span-2 grid grid-cols-5 grid-rows-12 gap-2 lg:gap-4 h-112">
+                        <div
+                            class="hidden sm:block invisible order-last lg:order-none col-span-5 sm:col-span-3 row-span-1 lg:mt-4 relative rounded-xl overflow-hidden">
+                            <img alt fetchpriority="auto" loading="lazy"
+                                decoding="async" data-nimg="fill"
+                                class="h-full w-full relative object-cover object-bottom"
+                                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                sizes="(min-width: 1200px) 1200px, (min-width: 640px) 640px, 420px"
+                                src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
+                        </div>
+                        <div
+                            class="col-span-5 sm:col-span-4 row-span-6 sm:row-span-5 lg:row-span-6 relative rounded-xl overflow-hidden">
+                            <img alt fetchpriority="auto" loading="lazy"
+                                decoding="async" data-nimg="fill"
+                                class="h-full w-full relative object-cover object-center"
+                                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                sizes="(min-width: 1200px) 1200px, (min-width: 640px) 640px, 420px"
+                                src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
+                        </div>
+                        <div
+                            class="order-first lg:order-none col-span-5 lg:col-span-3 row-span-6 lg:row-span-5 relative rounded-xl overflow-hidden">
+                            <img alt fetchpriority="auto" loading="lazy"
+                                decoding="async" data-nimg="fill"
+                                class="h-full w-full relative object-cover object-center"
+                                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                sizes="(min-width: 1200px) 1200px, (min-width: 640px) 640px, 420px"
+                                src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
+                        </div>
+                        <div
+                            class="col-span-2 row-span-6 lg:row-span-5 mb-4 hidden lg:block relative rounded-xl overflow-hidden">
+                            <img alt fetchpriority="auto" loading="lazy"
+                                decoding="async" data-nimg="fill"
+                                class="h-full w-full relative object-cover object-center"
+                                style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
+                                sizes="(min-width: 1200px) 1200px, (min-width: 640px) 640px, 420px"
+                                src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
+                        </div>
                     </div>
                 </div>
+
+                <div class="hidden sm:block">
+                    <div
+                        class="relative hidden sm:flex justify-center container mt-6 lg:mt-16 mb-6">
+                        <div
+                            class="opacity-0 overlay-frosted z-20 transition-transform duration-300"></div>
+                        <div class="absolute -mt-2"></div>
+                        <div class="absolute -mt-4"></div>
+
+                        <div
+                            class="flex space-x-3 w-full lg:w-4/5 lg:p-4 bg-white dark:bg-gray-800 p-2 z-30 rounded-xl shadow-2xl hover:shadow-blue-300 hover:shadow-3xl shadow-gray-300 dark:shadow-blue-600 transition-transform duration-200">
+                            <!-- Location Input -->
+                            <div class="grid grid-cols-9 flex-grow gap-2">
+                                <div class="flex-grow col-span-5 my-auto">
+                                    <div class="relative">
+                                        <div
+                                            class="sm:group flex w-full p-2 rounded-full sm:hover:bg-gray-100 sm:dark:hover:bg-gray-800 cursor-pointer">
+                                            <span class="m-1 text-green-400">
+                                                <svg width="1.5rem" fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <g>
+                                                        <path
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                        <path
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                            <div class="w-full">
+                                                <div
+                                                    class="mt-1 text-base text-gray-600 dark:text-gray-300 font-semibold transition-all duration-200">Location</div>
+                                                <input
+                                                    class="w-full p-0 text-lg font-medium focus:outline-none bg-transparent cursor-pointer"
+                                                    placeholder="Where are you going?"
+                                                    aria-label="Search for a location">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Dates Input -->
+                                <div class="col-span-4 my-auto">
+                                    <div
+                                        class="relative DateRangeFilter_container__HOPdP">
+                                        <div
+                                            class="sm:group flex w-full p-2 rounded-full sm:hover:bg-gray-100 sm:dark:hover:bg-gray-800 cursor-pointer">
+                                            <span class="m-1 text-green-400">
+                                                <svg width="1.5rem"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    stroke="currentColor">
+                                                    <g>
+                                                        <path
+                                                            d="M3.09264 9.40427H20.9166"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M16.4421 13.3097H16.4513"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M12.0046 13.3097H12.0139"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M7.55789 13.3097H7.56715"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M16.4421 17.1962H16.4513"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M12.0046 17.1962H12.0139"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M7.55789 17.1962H7.56715"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M16.0437 2V5.29078"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            d="M7.9655 2V5.29078"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                        <path
+                                                            fill-rule="evenodd"
+                                                            clip-rule="evenodd"
+                                                            d="M16.2383 3.57919H7.77096C4.83427 3.57919 3 5.21513 3 8.22222V17.2719C3 20.3262 4.83427 22 7.77096 22H16.229C19.175 22 21 20.3546 21 17.3475V8.22222C21.0092 5.21513 19.1842 3.57919 16.2383 3.57919Z"
+                                                            stroke-width="1.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"></path>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                            <div class="w-full">
+                                                <div
+                                                    class="mt-1 text-base text-gray-600 dark:text-gray-300 font-semibold transition-all duration-200">Dates</div>
+                                                <div
+                                                    class="text-gray-400 font-medium">When
+                                                    are you going?</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Search Button -->
+                            <button
+                                class="Button_filledPill__tkCP9 Button_mdSize__P1Uxt Button_grayColor__eFS4p flex items-center justify-center w-20 bg-gradient-to-br from-green-300 to-green-500 hover:to-green-500 dark:from-green-500 dark:to-green-700 rounded-xl"
+                                type="button">
+                                <span class="w-8 text-white dark:text-gray-200">
+                                    <svg width="1.5rem" viewBox="0 0 20 20"
+                                        fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
+        </section>
+        <section class="mx-5 md:mx-40">
 
             <div class="container overflow-x-clip mt-20">
                 <h2 class="mb-9 text-center text-3xl font-bold">
                     We've vetted retreats in more than 200 countries. See for
                     yourself:
                 </h2>
-                <div
-                    class="relative pb-5 overflow-x-visible CardSlider_slider__w0hYn">
-                    <div
-                        class="flex touch-pan-y items-start CardSlider_slides__3_Lze space-x-4">
-                        <div
-                            class="opacity-100 absolute right-0 z-10 w-16 h-full hidden sm:block bg-gradient-to-r from-white/0 to-white dark:from-gray-700/0 dark:to-gray-700 transition-all duration-300"></div>
 
+                <!-- Card Slider Wrapper -->
+                <div class="relative pb-5 overflow-x-hidden">
+                    <!-- Card Slider -->
+                    <div id="cardSlider"
+                        class="flex transition-transform ease-out duration-300">
                         <!-- Retreat Card 1 -->
-                        <article
-                            class="lg:w-1/4 CardSlider_slide__AQGSd col-span-12 sm:col-span-6 md:col-span-4">
-                            <div class="CardSlider_cardGutter__NZ8BG">
-                                <a
-                                    class="relative flex flex-col hover:shadow-xl rounded-xl px-4 pb-4">
-                                    <div class="h-96 relative mb-5 -mx-4">
-                                        <img
-                                            alt="Yoga Retreats in a serene setting"
-                                            loading="lazy" decoding="async"
-                                            class="object-cover object-center rounded-t-xl overflow-hidden"
-                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                                            sizes="640px"
-                                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
-                                    </div>
-                                    <h3 class="text-lg mb-2">Yoga Retreats</h3>
-                                    <div
-                                        class="text-base text-gray-600 dark:text-gray-200">
-                                        Take a break from life and make new
-                                        friends
-                                    </div>
-                                </a>
-                            </div>
+                        <article class="w-80 flex-shrink-0 px-4">
+                            <a
+                                class="relative flex flex-col hover:shadow-xl rounded-xl">
+                                <div class="h-56 relative mb-5">
+                                    <img
+                                        alt="Yoga Retreats in a serene setting"
+                                        class="object-cover object-center rounded-t-xl w-full h-full"
+                                        src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg" />
+                                </div>
+                                <h3 class="text-lg mb-2">Yoga Retreats</h3>
+                                <div
+                                    class="text-base text-gray-600 dark:text-gray-200">
+                                    Take a break from life and make new friends.
+                                </div>
+                            </a>
+                        </article>
+                        <article class="w-80 flex-shrink-0 px-4">
+                            <a
+                                class="relative flex flex-col hover:shadow-xl rounded-xl">
+                                <div class="h-56 relative mb-5">
+                                    <img
+                                        alt="Yoga Retreats in a serene setting"
+                                        class="object-cover object-center rounded-t-xl w-full h-full"
+                                        src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg" />
+                                </div>
+                                <h3 class="text-lg mb-2">Yoga Retreats</h3>
+                                <div
+                                    class="text-base text-gray-600 dark:text-gray-200">
+                                    Take a break from life and make new friends.
+                                </div>
+                            </a>
+                        </article>
+                        <article class="w-80 flex-shrink-0 px-4">
+                            <a
+                                class="relative flex flex-col hover:shadow-xl rounded-xl">
+                                <div class="h-56 relative mb-5">
+                                    <img
+                                        alt="Yoga Retreats in a serene setting"
+                                        class="object-cover object-center rounded-t-xl w-full h-full"
+                                        src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg" />
+                                </div>
+                                <h3 class="text-lg mb-2">Yoga Retreats</h3>
+                                <div
+                                    class="text-base text-gray-600 dark:text-gray-200">
+                                    Take a break from life and make new friends.
+                                </div>
+                            </a>
+                        </article>
+                        <article class="w-80 flex-shrink-0 px-4">
+                            <a
+                                class="relative flex flex-col hover:shadow-xl rounded-xl">
+                                <div class="h-56 relative mb-5">
+                                    <img
+                                        alt="Yoga Retreats in a serene setting"
+                                        class="object-cover object-center rounded-t-xl w-full h-full"
+                                        src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg" />
+                                </div>
+                                <h3 class="text-lg mb-2">Yoga Retreats</h3>
+                                <div
+                                    class="text-base text-gray-600 dark:text-gray-200">
+                                    Take a break from life and make new friends.
+                                </div>
+                            </a>
+                        </article>
+                        <article class="w-80 flex-shrink-0 px-4">
+                            <a
+                                class="relative flex flex-col hover:shadow-xl rounded-xl">
+                                <div class="h-56 relative mb-5">
+                                    <img
+                                        alt="Yoga Retreats in a serene setting"
+                                        class="object-cover object-center rounded-t-xl w-full h-full"
+                                        src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg" />
+                                </div>
+                                <h3 class="text-lg mb-2">Yoga Retreats</h3>
+                                <div
+                                    class="text-base text-gray-600 dark:text-gray-200">
+                                    Take a break from life and make new friends.
+                                </div>
+                            </a>
                         </article>
 
-                        <!-- Retreat Card 2 -->
-                        <article
-                            class="lg:w-1/4 CardSlider_slide__AQGSd col-span-12 sm:col-span-6 md:col-span-4">
-                            <div class="CardSlider_cardGutter__NZ8BG">
-                                <a
-                                    class="relative flex flex-col hover:shadow-xl rounded-xl px-4 pb-4">
-                                    <div class="h-96 relative mb-5 -mx-4">
-                                        <img
-                                            alt="Yoga Retreats in a serene setting"
-                                            loading="lazy" decoding="async"
-                                            class="object-cover object-center rounded-t-xl overflow-hidden"
-                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                                            sizes="640px"
-                                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
-                                    </div>
-                                    <h3 class="text-lg mb-2">Yoga Retreats</h3>
-                                    <div
-                                        class="text-base text-gray-600 dark:text-gray-200">
-                                        Take a break from life and make new
-                                        friends
-                                    </div>
-                                </a>
-                            </div>
-                        </article>
-
-                        <!-- Retreat Card 3 -->
-                        <article
-                            class="lg:w-1/4 CardSlider_slide__AQGSd col-span-12 sm:col-span-6 md:col-span-4">
-                            <div class="CardSlider_cardGutter__NZ8BG">
-                                <a
-                                    class="relative flex flex-col hover:shadow-xl rounded-xl px-4 pb-4">
-                                    <div class="h-96 relative mb-5 -mx-4">
-                                        <img
-                                            alt="Yoga Retreats in a serene setting"
-                                            loading="lazy" decoding="async"
-                                            class="object-cover object-center rounded-t-xl overflow-hidden"
-                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                                            sizes="640px"
-                                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
-                                    </div>
-                                    <h3 class="text-lg mb-2">Yoga Retreats</h3>
-                                    <div
-                                        class="text-base text-gray-600 dark:text-gray-200">
-                                        Take a break from life and make new
-                                        friends
-                                    </div>
-                                </a>
-                            </div>
-                        </article>
-
-                        <!-- Retreat Card 4 -->
-                        <article
-                            class="lg:w-1/4 CardSlider_slide__AQGSd col-span-12 sm:col-span-6 md:col-span-4">
-                            <div class="CardSlider_cardGutter__NZ8BG">
-                                <a
-                                    class="relative flex flex-col hover:shadow-xl rounded-xl px-4 pb-4">
-                                    <div class="h-96 relative mb-5 -mx-4">
-                                        <img
-                                            alt="Yoga Retreats in a serene setting"
-                                            loading="lazy" decoding="async"
-                                            class="object-cover object-center rounded-t-xl overflow-hidden"
-                                            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent"
-                                            sizes="640px"
-                                            src="https://stayingalivefitness.com/wp-content/uploads/2017/06/yoga-girl-wallpaper-1-1024x683.jpg">
-                                    </div>
-                                    <h3 class="text-lg mb-2">Yoga Retreats</h3>
-                                    <div
-                                        class="text-base text-gray-600 dark:text-gray-200">
-                                        Take a break from life and make new
-                                        friends
-                                    </div>
-                                </a>
-                            </div>
-                        </article>
+                        <!-- Add more cards in the same structure as above -->
+                        <!-- Repeat Card HTML blocks for additional retreat cards -->
                     </div>
+
+                    <!-- Right and Left Gradient Fades for Aesthetic -->
+                    <div
+                        class="absolute right-0 top-0 h-full w-16 bg-gradient-to-r from-transparent to-white pointer-events-none"></div>
+                    <div
+                        class="absolute left-0 top-0 h-full w-16 bg-gradient-to-l from-transparent to-white pointer-events-none"></div>
                 </div>
 
                 <!-- Navigation Buttons -->
-                <div class="flex justify-center mt-5 mb-5">
-                    <div class="hidden sm:flex">
-                        <div class="w-12">
-                            <button title="Previous" disabled type="button"
-                                class="
-                            flex justify-center items-center
-                            group p-2 rounded-full
-                            transition duration-300 ease-in-out
-                            dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900
-                            IconButton_white__TmfV5">
-                                <span class="IconButton_icon__9xLnA undefined">
-                                    <svg width="1.5rem" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path clip-rule="evenodd"
-                                            fill-rule="evenodd"
-                                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
-                        <div class="w-12">
-                            <button type="button" class="
-                            flex justify-center items-center
-                            group p-2 rounded-full
-                            transition duration-300 ease-in-out
-                            dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900
-                            IconButton_white__TmfV5">
-                                <span class="IconButton_icon__9xLnA undefined">
-                                    <svg width="1.5rem" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path clip-rule="evenodd"
-                                            fill-rule="evenodd"
-                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                        </div>
+                <div class="flex justify-center mt-5">
+                    <button id="prevBtn"
+                        class="w-12 h-12 rounded-full flex items-center justify-center bg-gray-200 text-gray-700 hover:bg-gray-300"
+                        disabled>
+                        <svg width="1.5rem" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"></path>
+                        </svg>
+                    </button>
+
+                    <button id="nextBtn"
+                        class="w-12 h-12 rounded-full flex items-center justify-center bg-gray-200 text-gray-700 hover:bg-gray-300">
+                        <svg width="1.5rem" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path clip-rule="evenodd" fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+        <section class="mx-5 md:mx-20">
+            <div
+                class="container mx-auto mt-5  grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-16">
+                <!-- Text Section -->
+                <div class="px-4 md:px-0 lg:pl-12 text-center">
+                    <h2 class="flex flex-col items-center relative mb-8">
+                        <span
+                            class="relative z-10 text-3xl sm:text-4xl font-extrabold">
+                            Book a Retreat,&nbsp;
+                            <div class="text-blue-400">Make a Difference</div>
+                        </span>
+                        <span
+                            class="-mt-5 w-96 text-gray-100 dark:text-gray-500">
+                            <svg viewBox="0 0 381 46" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M175.469 6.62727C174.092 6.70561 172.715 6.79006 171.338 6.8684C153.091 7.59753 134.84 8.47126 116.569 9.5499C105.093 10.2248 97.1025 10.737 90.5294 11.207C60.8055 12.7918 31.154 15.0817 1.70784 18.3116C1.16672 18.3718 0.892518 18.4802 0.85817 18.4983C0.0796251 18.8659 0.0127395 19.4987 0.0012903 19.806C-0.0137744 20.2399 0.0940937 20.8122 0.804546 21.1918C0.889511 21.234 1.07874 21.3365 1.40353 21.3606C1.5367 21.3726 3.15403 21.2583 6.21277 21.0232C6.05007 21.3607 6.04284 21.686 6.10431 21.9813C6.16577 22.2705 6.43515 23.1142 7.56922 23.2045C8.48756 23.2769 14.8497 22.3609 17.3203 22.1199C25.897 21.2883 34.4622 20.3302 43.0448 19.5588C56.4723 18.3476 69.9094 17.251 83.3484 16.1844C92.5102 15.4493 101.673 14.7321 110.839 14.0331C122.351 13.31 133.868 12.6411 145.388 12.0385C178.488 11.1407 211.59 10.9357 244.503 11.0984C283.725 11.2973 323.153 10.9779 362.122 15.6118L360.182 15.6842L359.489 15.7084C342.532 14.1537 322.135 15.3588 307.769 15.2142C245.913 14.5995 185.04 16.6062 123.421 21.5354C99.2363 23.4757 75.0646 26.1814 51.0087 29.2847C42.6887 30.3634 21.0847 32.9002 18.1434 33.8462C17.1389 34.1656 16.8683 34.8586 16.8099 35.0997C16.7219 35.4612 16.7599 35.8107 16.9316 36.1542C17.0431 36.3772 17.2323 36.6364 17.6023 36.8352C17.7433 36.9135 17.9988 37.0159 18.3984 37.0702C18.7635 37.1184 19.4131 37.1486 20.3881 37.1486C98.979 36.8292 177.271 27.5553 255.729 23.5782C284.684 22.1079 313.638 20.7159 342.598 19.3601C348.269 19.0949 353.945 18.9202 359.622 18.7153C360.815 18.8298 361.984 18.9562 363.135 19.1009L350.095 19.7879C324.105 21.1558 298.188 23.0961 272.246 25.2293C212.168 30.1645 152.365 38.3778 92.2354 42.4935C91.4062 42.5537 90.7789 43.2708 90.8355 44.1023C90.8922 44.9339 91.6123 45.5606 92.4415 45.5004C152.584 41.3847 212.403 33.1654 272.493 28.2302C298.405 26.1031 324.292 24.1627 350.251 22.7948C359.483 22.3128 372.409 21.6317 374.873 21.4931C375.168 21.4751 375.337 21.4631 375.367 21.4571C376.078 21.3788 376.331 20.9568 376.368 20.9086C376.735 20.4567 376.765 19.9927 376.651 19.5649C376.578 19.2997 376.392 18.7454 375.626 18.5164Z"></path>
+                            </svg>
+                        </span>
+                    </h2>
+                    <p>A percentage of your booking will go to providing
+                        enriched
+                        meals for underprivileged children.</p>
+                    <p>To date, BookRetreats has provided <span
+                            class="font-bold">over 6,621,000 enriched
+                            meals</span>
+                        to underprivileged children through our partner
+                        organisations.</p>
+                    <p>And it’s not just the kids you can help - <span
+                            class="font-bold text-green-700 dark:text-green-300">you
+                            can offset your trip’s emissions at checkout</span>.
+                        Oh,
+                        and we’re a <span
+                            class="font-bold text-green-700 dark:text-green-300">carbon-neutral
+                            company</span> too!</p>
+                    <div class="flex justify-center mt-4">
+                        <img alt="Carbon Neutral Logo" class="w-24 h-24"
+                            src="./carbon-neutral-logo.png" />
+                    </div>
+                </div>
+
+                <!-- Image Section -->
+                <div
+                    class="flex justify-center items-center order-first md:order-last">
+                    <div
+                        class="relative lg:m-12 h-96 w-96 md:h-112 md:w-112 lg:h-128 lg:w-128">
+                        <img alt="Enriched Meals"
+                            class="w-full h-full object-cover"
+                            src="./meals.png" />
                     </div>
                 </div>
             </div>
         </section>
-        <footer
-            class="pt-4 pb-0 px-5 sm:px-50 sm:py-50 bg-gray-100 dark:bg-gray-800">
-            <div class="container mx-20 flex flex-row flex-wrap ">
-                <div class="row w-full sm:w-5/12 lg:w-4/12 px-3 mb-6">
-                    <div class="flex flex-col mb-6">
-                        <div class="flex items-center mb-2">
-                            <span class="text-red-800">Made with</span>
-                            <svg width="1.5rem" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" class="mx-1">
-                                <g>
-                                    <path fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M11.761 20.8538C9.5904 19.5179 7.57111 17.9456 5.73929 16.1652C4.45144 14.8829 3.47101 13.3198 2.8731 11.5954C1.79714 8.25031 3.05393 4.42083 6.57112 3.28752C8.41961 2.69243 10.4384 3.03255 11.9961 4.20148C13.5543 3.03398 15.5725 2.69398 17.4211 3.28752C20.9383 4.42083 22.2041 8.25031 21.1281 11.5954C20.5302 13.3198 19.5498 14.8829 18.2619 16.1652C16.4301 17.9456 14.4108 19.5179 12.2402 20.8538L12.0051 21L11.761 20.8538Z"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"></path>
-                                    <path
-                                        d="M15.7393 7.05301C16.8046 7.39331 17.5615 8.34971 17.6561 9.47499"
-                                        stroke="currentColor"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"></path>
-                                </g>
+
+        <section class="mx-5 md:mx-20">
+            <div class="py-20 overflow-x-clip">
+                <div class="container">
+                    <h2 class="flex flex-col items-center relative mb-8">
+                        <span
+                            class="relative z-10 text-3xl sm:text-4xl text-center font-extrabold">
+                            <!-- Left Decorative SVG -->
+                            <svg
+                                class="absolute left-0 top-0 -ml-14 -mt-6 w-12 h-12 dark:hue-rotate-90"
+                                width="75" height="69" fill="none"
+                                xmlns="https://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M53.2431 27.8991C53.3596 27.8647 53.4769 27.8317 53.5948 27.8001C61.2044 25.7611 69.0261 30.277 71.0651 37.8865C73.104 45.496 68.5882 53.3177 60.9786 55.3567C53.8038 57.2792 46.4404 53.3744 43.9133 46.5435C35.731 30.174 42.2133 10.2213 58.5261 1.81057C59.2792 1.42227 60.0402 1.06532 60.8076 0.73922C54.4574 8.19345 51.6428 18.1637 53.2431 27.8991Z"
+                                    fill="#E9ECF2"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20.3103 36.7234C20.4268 36.689 20.5441 36.656 20.6621 36.6244C28.2717 34.5854 36.0934 39.1013 38.1324 46.7109C40.1714 54.3205 35.6556 62.1422 28.046 64.1811C20.8717 66.1035 13.5087 62.1994 10.9812 55.3694C2.79775 38.9997 9.28002 19.0462 25.5933 10.6352C26.3464 10.2469 27.1074 9.88994 27.8748 9.56385C21.5246 17.018 18.7101 26.9881 20.3103 36.7234Z"
+                                    fill="#E9ECF2"></path>
                             </svg>
-                            <span>by</span>
-                            <a href="/" class="relative flex h-8">
-                                <img alt="BookRetreats.com logo"
-                                    class="object-contain"
-                                    src="./logo.png">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mb-6">
-                        <h3 class="m-0">Who are we?</h3>
-                        <p class="text-base">We are a team of yogis who came
-                            together to put our energy into making the world
-                            a better place by connecting you with life-changing
-                            yoga retreats, meditation retreats, wellness
-                            retreats, and yoga teacher trainings. We are all
-                            about spreading love!</p>
-                    </div>
-                    <div class="mb-4">
-                        <h3 class="m-0">Why choose us?</h3>
-                        <p class="text-base">We aren't just a business; we are
-                            family. When you book with us, you can be
-                            sure that your experience will be full of love,
-                            security, understanding, and joy every step of
-                            the way.</p>
-                    </div>
-                    <div class="block sm:hidden mb-6">
-                        <h3 class>100% Carbon Neutral</h3>
-                        <p>Bookretreats offsets 100% of its carbon
-                            emissions.</p>
-                    </div>
-                </div>
+                            Why Travellers Love Us
+                            <!-- Right Decorative SVG -->
+                            <svg
+                                class="absolute right-0 top-0 -mt-2 -mr-10 w-8 h-8 dark:hue-rotate-90"
+                                width="47" height="42" fill="none"
+                                xmlns="https://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12.0912 20.0741C12.0122 20.063 11.9331 20.0509 11.8539 20.0378C6.74575 19.1924 3.29009 14.3661 4.13551 9.25794C4.98092 4.14977 9.80725 0.694135 14.9154 1.53955C19.7318 2.33667 23.0791 6.67287 22.7371 11.4475C23.1906 23.4666 13.894 33.6493 1.84674 34.2549C1.29045 34.2829 0.737958 34.29 0.190009 34.2768C6.01466 31.5391 10.4061 26.3356 12.0912 20.0741Z"
+                                    fill="#E9ECF2"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M34.1984 23.7329C34.1193 23.7219 34.0402 23.7098 33.961 23.6967C28.8528 22.8513 25.3971 18.0249 26.2426 12.9167C27.088 7.80849 31.9143 4.35283 37.0225 5.19825C41.8387 5.99535 45.1859 10.3313 44.8442 15.1058C45.2981 27.1251 36.0013 37.308 23.9539 37.9136C23.3977 37.9416 22.8452 37.9486 22.2974 37.9355C28.1219 35.1978 32.5132 29.9944 34.1984 23.7329Z"
+                                    fill="#E9ECF2"></path>
+                            </svg>
+                        </span>
+                    </h2>
 
-                <div class="w-full sm:w-3/12 lg:w-5/12 px-3 mb-3">
-                    <div class="flex flex-col lg:flex-row justify-around">
-                        <div class="w-full mb-4">
-                            <h3 class="mb-0">General</h3>
-                            <ul>
-                                <li><a href="/about"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">About
-                                        Us</a></li>
-                                <li><a href="/blog"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Blog</a></li>
-                                <li><a href="/contact"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Contact
-                                        Us</a></li>
-                                <li><a href="/jobs"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Jobs</a></li>
-                                <li><a href="/blog/press-page/"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Press</a></li>
-                                <li><a href="https://reviews.bookretreats.com/"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Reviews</a></li>
-                                <li><a href="/account/affiliates"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Affiliates</a></li>
-                            </ul>
-                        </div>
-                        <div class="w-full mb-4">
-                            <h3 class="mb-0">For Hosts</h3>
-                            <ul>
-                                <li><a href="/work-with-us"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Add
-                                        a Retreat</a></li>
-                                <li><a href="/family"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Host
-                                        Blog</a></li>
-                                <li><a
-                                        href="https://help.bookretreats.com/en/collections/116987-hosts"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Host
-                                        FAQs</a></li>
-                            </ul>
-                        </div>
-                        <div class="w-full mb-4">
-                            <h3 class="mb-0">For Guests</h3>
-                            <ul>
-                                <li><a href="/cancellation"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Cancellation
-                                        Policies</a></li>
-                                <li><a href="/gift"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Buy
-                                        Gift Cards</a></li>
-                                <li><a
-                                        href="https://help.bookretreats.com/en/collections/1445661-guests"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Guest
-                                        FAQs</a></li>
-                                <li><a
-                                        href="https://www.facebook.com/groups/yogiswhotravel/"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base"
-                                        rel="noopener,nofollow">Join Our
-                                        Community</a></li>
-                                <li><a href="/teachers"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Search
-                                        Teachers</a></li>
-                                <li><a href="/centers"
-                                        class="block py-2 text-gray-500 dark:text-gray-200 text-base">Search
-                                        Centers</a></li>
-                            </ul>
-                        </div>
+                    <div class="flex justify-center">
+                        <p class="text-center w-112 mb-14">
+                            Don't just take our word for it. Hundreds of guests
+                            have
+                            shared how much they love booking with us.
+                        </p>
                     </div>
-                </div>
 
-                <div class="w-full sm:w-4/12 md:w-3/12 px-3">
-                    <div class="mb-4">
-                        <h3 class="mb-1">Secure payments</h3>
-                        <img alt="Payment methods" loading="lazy" width="285"
-                            height="35">
-                    </div>
                 </div>
             </div>
-            <div class="container mx-auto px-4 text-center">
-                <p>
-                    &copy; 2024 Yoga Retreat Pokhara. All rights reserved.
-                    <a href="/privacy" class="hover:text-gray-500">Privacy
-                        Policy</a> |
-                    <a href="/terms" class="hover:text-gray-500">Terms of
-                        Service</a>
-                </p>
-                <div class="flex justify-center mt-4 space-x-6">
-                    <a href="https://facebook.com" class="hover:text-gray-500">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://twitter.com" class="hover:text-gray-500">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com" class="hover:text-gray-500">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+
+        </section>
+        <footer class="bg-green-50">
+            <div class="container pt-4 pb-0 mx-auto">
+                <div class="flex flex-wrap gap-6 py-10 mx-5 md:mx-20">
+                    <!-- First Column -->
+                    <div class="w-full sm:w-5/12 lg:w-4/12 px-3">
+                        <div class="mb-6">
+                            <a href="/" class="relative flex h-8 mb-4">
+                                <img alt="Yoga Retreat Pokhara logo"
+                                    class="object-contain" src="./logo.png">
+                            </a>
+                        </div>
+                        <div>
+                            <h3 class="m-0">Who are we?</h3>
+                            <p class="text-base">
+                                We are a team of yogis who came together to put
+                                our energy into making the world a better place
+                                by connecting you with life-changing yoga
+                                retreats, meditation retreats, wellness
+                                retreats, and yoga teacher trainings. We are all
+                                about spreading love!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Second Column -->
+                    <div class="w-full sm:w-5/12 lg:w-3/12 px-3">
+                        <div class="flex flex-col gap-6">
+                            <!-- General Info Section -->
+                            <div class="w-full">
+                                <h3 class="mb-2">General</h3>
+                                <ul>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa fa-phone"></i>
+                                        <a href="tel:9810110100"
+                                            class="text-gray-500 text-base">9810110100</a>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <i class="fa fa-mail-bulk"></i>
+                                        <a href="mailto:info@retreatvenues.com"
+                                            class="text-gray-500 text-base">info@retreatvenues.com</a>
+                                    </li>
+                                </ul>
+
+                                <h3 class="mt-4 mb-2">Social Links</h3>
+                                <ul class="flex gap-4">
+                                    <li><a href="https://www.facebook.com"
+                                            class="text-gray-500"><i
+                                                class="fa fa-facebook-square"></i></a></li>
+                                    <li><a href="https://www.instagram.com"
+                                            class="text-gray-500"><i
+                                                class="fa fa-instagram-square"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third Column -->
+                    <div class="w-full sm:w-4/12 lg:w-2/12 px-3">
+                        <h3 class="mb-2">Quick Links</h3>
+                        <ul>
+                            <li><a href="#"
+                                    class="block py-2 text-gray-500 text-base">Home</a></li>
+                            <li><a href="#"
+                                    class="block py-2 text-gray-500 text-base">Blogs</a></li>
+                            <li><a href="#"
+                                    class="block py-2 text-gray-500 text-base">Contact</a></li>
+                            <li><a href="#"
+                                    class="block py-2 text-gray-500 text-base">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Fourth Column -->
+                    <div class="w-full sm:w-4/12 md:w-2/12 px-3">
+                        <div class="flex flex-col gap-4">
+                            <h3 class="mb-2">Feature Listing</h3>
+                            <div class="flex gap-3 ">
+                                <!-- Image on one side -->
+                                <div class="w-1/3">
+                                    <img src="./lake.jpeg" alt="Feature Image" class="w-full h-full object-cover rounded">
+                                </div>
+                                
+                                <!-- Details on the other side -->
+                                <div class="w-2/3 flex flex-col justify-center">
+                                    <h4 class="text-sm font-semibold">Feature Title</h4> <!-- Changed to text-sm -->
+                                    <p class="text-xs text-gray-500">Short description or details about the feature. It can be a couple of lines.</p> <!-- Changed to text-xs -->
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <!-- Image on one side -->
+                                <div class="w-1/3">
+                                    <img src="./lake.jpeg" alt="Feature Image" class="w-full h-full object-cover rounded">
+                                </div>
+                                
+                                <!-- Details on the other side -->
+                                <div class="w-2/3 flex flex-col justify-center">
+                                    <h4 class="text-sm font-semibold">Feature Title</h4> <!-- Changed to text-sm -->
+                                    <p class="text-xs text-gray-500">Short description or details about the feature. It can be a couple of lines.</p> <!-- Changed to text-xs -->
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <select class="p-2 rounded w-full bg-gray-200 appearance-none pr-8">
+                                    <option value="USD" class="flex items-center">
+                                        <img src="path-to-usd-flag.png" alt="USD Flag" class="w-4 h-4 inline mr-2"> USD
+                                    </option>
+                                    <option value="RS" class="flex items-center">
+                                        <img src="path-to-nepali-flag.png" alt="Nepali Flag" class="w-4 h-4 inline mr-2"> Nepali
+                                    </option>
+                                    <option value="INR" class="flex items-center">
+                                        <img src="path-to-inr-flag.png" alt="Indian Flag" class="w-4 h-4 inline mr-2"> Indian
+                                    </option>
+                                </select>
+                                <!-- Custom arrow for better UX -->
+                                <div class="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                    <svg class="w-4 h-4 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-10 md:mx-20">
+                    <div class="border-t border-gray-300 w-full my-4"></div>
+                    <!-- Footer bottom section -->
+                    <div
+                        class="py-5 px-4 flex justify-between items-center gap-4 ">
+                        <p>&copy; 2024 Yoga Retreat Pokhara. All rights
+                            reserved.</p>
+                        <div>
+                            <a href="/privacy"
+                                class="hover:text-gray-500">Privacy Policy</a> |
+                            <a href="/terms" class="hover:text-gray-500">Terms and Conditions</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
 
-        <script>
-
-window.onscroll = function () {
-    var header = document.querySelector(".relative");
-    var stickyClass = "fixed top-4 inset-x-0 z-30";
-    if (window.pageYOffset > 100) { // Adjust based on when to trigger the fixed header
-        header.classList.add(stickyClass);
-    } else {
-        header.classList.remove(stickyClass);
-    }
-};
-
-        // Mobile Navigation Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        flatpickr("#date-picker", {
-     mode: "range", // Allows selecting a range of dates
-    dateFormat: "Y-m-d", // Customize the date format
-    showMonths: 2, // Show two months for easier navigation
-    altInput: true, // Show a nicer, human-readable input
-    altFormat: "F j, Y", // Format for the alternative input field
-    minDate: "today", // Disable past dates
-    onOpen: function(selectedDates, dateStr, instance) {
-      // Set a high z-index for the calendar popup
-      instance.calendarContainer.style.zIndex = "10000";
-    }
-  });
-       
-
-    </script>
     </body>
 
 </html>
